@@ -1,0 +1,114 @@
+{
+    "courses":[
+        {
+            "id":1,
+            "title":"Guitar Lessons",
+            "slug":"guitar-lessons",
+            "description":"Learn to play the guitar from scratch.",
+            "price":49.99,
+            "image":"https://media.istockphoto.com/id/840272742/photo/learning-to-play-the-guitar-music-education-and-extracurricular-lessons.jpg?s=612x612&w=0&k=20&c=tC_8J0qwWz5vI-Gcr8VG7POYKanVVzUwrteVZr_I87A=",
+            "instructor":"John Doe",
+            "duration":"8 weeks",
+            "isfeatured":true
+        },
+        {
+            "id":2,
+            "title":"Piano for Beginners",
+            "slug":"piano-for-beginners",
+            "description":"Start your piano journey with this beginner-friendly course.",
+            "price":59.99,
+            "image":"https://images.pexels.com/photos/11895469/pexels-photo-11895469.jpeg",
+            "instructor":"Jane Smith",
+            "duration":"6 weeks",
+            "isfeatured":false
+        },
+        {
+            "id":3,
+            "title":"Drumming Basics",
+            "slug":"drumming-basics",
+            "description":"Get into the rhythm with our drumming basics course.",
+            "price":39.99,
+            "image":"https://images.pexels.com/photos/8132942/pexels-photo-8132942.jpeg",
+            "instructor":"Mike Johnson",
+            "duration":"4 weeks",
+            "isfeatured":true
+        },
+        {
+            "id":4,
+            "title":"Violin Mastery",
+            "slug":"violon-mastery",
+            "description":"Master the violin with our comprehensive course.",
+            "price":79.99,
+            "image":"https://images.pexels.com/photos/7097470/pexels-photo-7097470.jpeg",
+            "instructor":"Emily Davis",
+            "duration":"10 weeks",
+            "isfeatured":false
+        },
+        {
+            "id":5,
+            "title":"Singing Techniques",
+            "slug":"singing-techniques",
+            "description":"Enhance your vocal skills with professional techniques.",
+            "price":69.99,
+            "image":"https://images.pexels.com/photos/7087174/pexels-photo-7087174.jpeg",
+            "instructor":"Sarah Lee",
+            "duration":"5 weeks",
+            "isfeatured":true
+        },
+        {
+            "id":6,
+            "title":"Music Theory Essentials",
+            "slug":"music-theory-essentials",
+            "description":"Understand the fundamentals of music theory.",
+            "price":29.99,
+            "image":"https://images.pexels.com/photos/7285165/pexels-photo-7285165.jpeg",
+            "instructor":"David Brown",
+            "duration":"3 weeks",
+            "isfeatured":true
+        },
+        {
+            "id":7,
+            "title":"Jazz Improvisation",
+            "slug":"jazz-improvisation",
+            "description":"Learn the art of jazz improvisation and express yourself musically.",
+            "price":89.99,
+            "image":"https://images.pexels.com/photos/4786236/pexels-photo-4786236.jpeg",
+            "instructor":"Chris Wilson",
+            "duration":"12 weeks",
+            "isfeatured":false
+        },
+        {
+            "id":8,
+            "title":"Electronic Music Production",
+            "slug":"electronic-music-production",
+            "description":"Dive into the world of electronic music production.",
+            "price":99.99,
+            "image":"https://images.pexels.com/photos/8042646/pexels-photo-8042646.jpeg",
+            "instructor":"Alex Martinez",
+            "duration":"8 weeks",
+            "isfeatured":true
+        },
+        {
+            "id":9,
+            "title":"Songwriting Workshop",
+            "slug":"songwriting-workshop",
+            "description":"Develop your songwriting skills and create original music.",
+            "price":59.99,
+            "image":"https://images.pexels.com/photos/4708913/pexels-photo-4708913.jpeg",
+            "instructor":"Laura Thompson",
+            "duration":"6 weeks",
+            "isfeatured":false
+        },
+        {
+            "id":10,
+            "title":"Orchestral Arranging",
+            "slug":"orchestral-arranging",
+            "description":"Learn how to arrange music for orchestras and ensembles.",
+            "price":79.99,
+            "image":"https://images.pexels.com/photos/7097471/pexels-photo-7097471.jpeg",
+            "instructor":"Robert Garcia",
+            "duration":"10 weeks",
+            "isfeatured":true
+        }
+    ]
+}
