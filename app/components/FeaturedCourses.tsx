@@ -73,7 +73,7 @@ export default function FeaturedCourses() {
                   <span>{course.duration}</span>
                 </div>
 
-                <Link href="/courses">
+                <Link href={`/courses/${course.id}`}>
                   <button
                     className="w-full rounded-full bg-neutral-800 dark:bg-neutral-400 text-white dark:text-black font-semibold text-sm py-2.5
               border border-neutral-700 dark:border-neutral-300
