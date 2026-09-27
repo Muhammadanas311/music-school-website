@@ -3,6 +3,7 @@ import React from "react";
 import { BackgroundGradient } from "@/app/components/ui/background-gradient";
 import courseData from "@/app/data/music_data.json";
 import Link from "next/link";
+import Image from "next/image";
 //Defining Our Datatype for Typescript
 interface Course {
   id: number;
@@ -37,19 +38,19 @@ export default function FeaturedCourses() {
               key={course.id}
               className="flex flex-col rounded-[22px] bg-white dark:bg-zinc-900 overflow-hidden h-full w-full"
             >
-              
               <div className="relative w-full h-44 shrink-0 overflow-hidden bg-neutral-200 dark:bg-neutral-800">
-                <img
+                <Image
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-110"
                 />
                 <span className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
                   ${course.price}
                 </span>
               </div>
 
-            
               <div className="p-5 sm:p-6 flex flex-col flex-grow text-center">
                 <p className="text-lg sm:text-xl font-bold text-black dark:text-white mb-2">
                   {course.title}
