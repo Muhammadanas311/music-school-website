@@ -14,8 +14,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Music School - Master the Art of Music",
-  description: "Explore comprehensive music courses, live webinars, and masterclasses from world-class instructors.",
+  title: {
+    default: "Music School | Master the Art of Music",
+    template: "%s | Music School",
+  },
+  description:
+    "Explore comprehensive music courses, live webinars, and masterclasses from world-class instructors.",
+  keywords: [
+    "music school",
+    "online music classes",
+    "learn music online",
+    "music courses",
+    "piano lessons",
+    "guitar lessons",
+    "vocal training",
+    "music theory",
+    "music webinars",
+    "masterclasses",
+  ],
+  authors: [{ name: "Music School" }],
+  creator: "Music School",
+  applicationName: "Music School",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Music School",
+    title: "Music School | Master the Art of Music",
+    description:
+      "Expert-led music courses, live webinars, and masterclasses for every level.",
+    images: [
+      {
+        url: "/icon.png",
+        width: 1024,
+        height: 1024,
+        alt: "Music School logo",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -30,10 +69,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <div className="relative w-full flex items-center justify-center">
-          <Navbar/>
+          <Navbar />
         </div>
         {children}
-        </body>
+      </body>
     </html>
   );
 }

@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import { BackgroundBeams } from "@/app/components/ui/background-beams";
+import { contactAction } from "@/app/contact/contactAction";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async(formdata: FormData) => {
+    await contactAction(formdata)
     setSubmitted(true);
   };
 
@@ -39,7 +40,7 @@ export default function ContactPage() {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <form className="flex flex-col gap-5" action={handleSubmit}>
           <div className="flex flex-col gap-2">
             <label
               htmlFor="contactemail"
