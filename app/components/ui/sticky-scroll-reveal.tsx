@@ -55,12 +55,12 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md p-10"
+      className="relative flex h-[28rem] sm:h-[30rem] justify-center space-x-0 lg:space-x-10 overflow-y-auto rounded-md p-4 sm:p-6 md:p-10"
       ref={ref}>
-      <div className="div relative flex items-start px-4">
-        <div className="max-w-2xl">
+      <div className="relative flex items-start px-2 sm:px-4 w-full lg:w-auto justify-center lg:justify-start">
+        <div className="w-full max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-10 sm:my-16 md:my-20">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -68,7 +68,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100">
+                className="text-xl sm:text-2xl font-bold text-slate-100">
                 {item.title}
               </motion.h2>
               <motion.p
@@ -78,7 +78,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg mt-10 max-w-sm text-slate-300">
+                className="text-sm sm:text-base mt-4 sm:mt-8 max-w-sm text-slate-300 leading-relaxed">
                 {item.description}
               </motion.p>
             </div>
@@ -89,7 +89,7 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "sticky top-10 hidden h-60 w-80 overflow-hidden rounded-md bg-white lg:block",
+          "sticky top-10 hidden h-60 w-80 overflow-hidden rounded-md bg-white lg:block shrink-0",
           contentClassName
         )}>
         {content[activeCard].content ?? null}

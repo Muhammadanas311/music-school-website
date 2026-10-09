@@ -38,7 +38,7 @@ const testimonials = [
 
 export default function TestimonialCards() {
   return (
-    <div className="h-[40rem] w-full bg-white dark:bg-black relative flex flex-col items-center justify-center overflow-hidden">
+    <div className="h-[32rem] sm:h-[40rem] w-full bg-white dark:bg-black relative flex flex-col items-center justify-center overflow-hidden px-2 sm:px-0">
       <div
         className={cn(
           "absolute inset-0",
@@ -47,10 +47,10 @@ export default function TestimonialCards() {
           "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
         )}
       />
-      <h2 className="text-center font-bold mb-8 z-10 text-3xl text-neutral-800 dark:text-white">
+      <h2 className="text-center font-bold mb-6 sm:mb-8 z-10 text-2xl sm:text-3xl px-4 text-neutral-800 dark:text-white">
         Hear Our Harmony: Voices of Success
       </h2>
-      <div className="flex justify-center w-full overflow-hidden px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-center w-full overflow-hidden px-2 sm:px-6 lg:px-8">
         <div className="w-full max-w-6xl">
           <InfiniteMovingCards
             items={testimonials}

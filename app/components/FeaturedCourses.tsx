@@ -22,17 +22,17 @@ export default function FeaturedCourses() {
     (course: Course) => course.isfeatured,
   );
   return (
-    <div className="py-12 bg-gray-950">
-      <div className="text-center">
-        <h2 className="text-base text-gray-500 font-semibold tracking-wide uppercase">
+    <div className="py-10 sm:py-12 bg-gray-950">
+      <div className="text-center px-4">
+        <h2 className="text-sm sm:text-base text-gray-500 font-semibold tracking-wide uppercase">
           FEATURED COURSES
         </h2>
-        <p className="mt-4 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+        <p className="mt-2 sm:mt-4 text-2xl sm:text-3xl md:text-4xl leading-8 font-extrabold tracking-tight text-white">
           Learn With the Best
         </p>
       </div>
-      <div className="mt-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+      <div className="mt-10 sm:mt-16 md:mt-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {featuredcourses.map((course: Course) => (
             <BackgroundGradient
               key={course.id}
@@ -51,7 +51,7 @@ export default function FeaturedCourses() {
                 </span>
               </div>
 
-              <div className="p-5 sm:p-6 flex flex-col flex-grow text-center">
+              <div className="p-4 sm:p-6 flex flex-col flex-grow text-center">
                 <p className="text-lg sm:text-xl font-bold text-black dark:text-white mb-2">
                   {course.title}
                 </p>
@@ -92,10 +92,10 @@ export default function FeaturedCourses() {
           ))}
         </div>
       </div>
-      <div className="mt-20 text-center">
+      <div className="mt-10 sm:mt-16 md:mt-20 text-center px-4">
         <Link
           href={"/courses"}
-          className="rounded-2xl px-6 py-4 border border-neutral-600 text-white-700 bg-gray-700 hover:bg-gray-900 transition duration-200"
+          className="inline-block rounded-2xl px-6 py-3.5 sm:py-4 border border-neutral-600 text-white bg-gray-700 hover:bg-gray-900 transition duration-200"
         >
           View All Courses
         </Link>

@@ -38,20 +38,20 @@ export default function ExpandableCardDemo() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <div className="mt-30">
+    <div className="pt-28 sm:pt-36 pb-16 px-4 sm:px-6 min-h-screen">
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+            className="fixed inset-0 bg-black/40 backdrop-blur-xs h-full w-full z-10"
           />
         )}
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0 grid place-items-center z-[100] p-3 sm:p-4 overflow-y-auto">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -67,7 +67,7 @@ export default function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="flex absolute top-3 right-3 z-30 lg:hidden items-center justify-center bg-white/90 dark:bg-neutral-800 rounded-full h-8 w-8 shadow-md cursor-pointer"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -75,30 +75,30 @@ export default function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] max-h-[90vh] md:max-h-[85vh] flex flex-col bg-white dark:bg-neutral-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl relative my-auto"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
-                  width={200}
-                  height={200}
+                  width={400}
+                  height={300}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-48 sm:h-64 lg:h-80 object-cover object-top"
                 />
               </motion.div>
 
-              <div>
-                <div className="flex justify-between items-start p-4">
-                  <div className="">
+              <div className="flex flex-col flex-grow overflow-hidden">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 p-4">
+                  <div className="w-full sm:w-auto">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 dark:text-neutral-200"
+                      className="font-bold text-base sm:text-lg text-neutral-700 dark:text-neutral-200"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400"
+                      className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400"
                     >
                       {active.description}
                     </motion.p>
@@ -108,18 +108,18 @@ export default function ExpandableCardDemo() {
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                    className="px-4 py-2 sm:py-2.5 text-xs sm:text-sm rounded-full font-bold bg-green-500 text-white text-center w-full sm:w-auto shrink-0"
                   >
                     {active.ctaText}
                   </motion.a>
                 </div>
-                <div className="pt-4 relative px-4">
+                <div className="pt-2 sm:pt-4 relative px-4 pb-4 overflow-y-auto">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-xs sm:text-sm max-h-44 sm:max-h-56 flex flex-col items-start gap-3 overflow-y-auto dark:text-neutral-400"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -131,34 +131,34 @@ export default function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <ul className="max-w-2xl mx-auto w-full flex flex-col gap-3 sm:gap-4">
         {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-3 sm:p-4 flex flex-col sm:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer transition-colors gap-3 sm:gap-4"
           >
-            <div className="flex gap-4 flex-col md:flex-row ">
+            <div className="flex gap-3 sm:gap-4 flex-col sm:flex-row items-center sm:items-start text-center sm:text-left w-full sm:w-auto">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <img
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
+                  className="h-32 w-32 sm:h-14 sm:w-14 rounded-lg object-cover object-top shrink-0"
                 />
               </motion.div>
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
+                  className="font-medium text-sm sm:text-base text-neutral-800 dark:text-neutral-200"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
+                  className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400"
                 >
                   {card.description}
                 </motion.p>
@@ -166,7 +166,7 @@ export default function ExpandableCardDemo() {
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+              className="px-4 py-2 text-xs sm:text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black shrink-0 w-full sm:w-auto"
             >
               {card.ctaText}
             </motion.button>

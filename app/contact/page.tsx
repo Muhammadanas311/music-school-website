@@ -12,20 +12,20 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="relative w-full flex items-center justify-center min-h-screen mt-20 px-4 overflow-hidden bg-black">
+    <div className="relative w-full flex items-center justify-center min-h-screen pt-28 pb-12 sm:pt-36 sm:pb-16 px-4 overflow-hidden bg-black">
   <div className="relative z-10 w-full max-w-xl">
-    <div className="text-center mb-10">
-      <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+    <div className="text-center mb-8 sm:mb-10">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
         Contact Us
       </h1>
-      <p className="text-neutral-400 text-sm md:text-base max-w-md mx-auto leading-relaxed">
+      <p className="text-neutral-400 text-xs sm:text-sm md:text-base max-w-md mx-auto leading-relaxed px-2">
         We are here to help you with any queries, courses, programs or
         events. Reach us and let us know how we can assist you in your
         musical journey.
       </p>
     </div>
 
-    <div className="bg-neutral-900/60 backdrop-blur-md border border-neutral-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+    <div className="bg-neutral-900/60 backdrop-blur-md border border-neutral-800 rounded-2xl p-5 sm:p-8 shadow-xl">
       {submitted ? (
         <div className="text-center py-8">
           <h2 className="text-2xl font-semibold text-emerald-400 mb-2">Message Sent!</h2>

@@ -26,7 +26,7 @@ export default function CourseDetailPage() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
-      <div className="relative h-[60vh] w-full overflow-hidden">
+      <div className="relative h-[55vh] min-h-[380px] sm:h-[60vh] w-full overflow-hidden">
         <motion.img
           src={courseData.image}
           alt={courseData.title}
@@ -41,11 +41,11 @@ export default function CourseDetailPage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
-          className="absolute top-6 left-6"
+          className="absolute top-20 sm:top-24 md:top-8 left-4 sm:left-6 z-20"
         >
           <Link
             href="/courses"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-md text-sm font-medium hover:bg-black/70 transition-colors"
+            className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium hover:bg-black/70 transition-colors"
           >
             ← Back to Courses
           </Link>
@@ -55,7 +55,7 @@ export default function CourseDetailPage() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="absolute top-6 right-6 bg-white text-black font-bold px-5 py-2 rounded-full text-lg shadow-lg"
+          className="absolute top-20 sm:top-24 md:top-8 right-4 sm:right-6 z-20 bg-white text-black font-bold px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-lg shadow-lg"
         >
           ${courseData.price}
         </motion.div>
@@ -64,53 +64,53 @@ export default function CourseDetailPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="absolute bottom-0 left-0 right-0 p-8 md:p-12"
+          className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-12"
         >
           {courseData.isfeatured && (
-            <span className="inline-block mb-3 px-3 py-1 rounded-full bg-amber-400 text-black text-xs font-bold tracking-wide uppercase">
+            <span className="inline-block mb-2 sm:mb-3 px-3 py-1 rounded-full bg-amber-400 text-black text-[10px] sm:text-xs font-bold tracking-wide uppercase">
               Featured Course
             </span>
           )}
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold tracking-tight">
             {courseData.title}
           </h1>
         </motion.div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 md:px-12 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex flex-wrap gap-6 mb-10 pb-8 border-b border-neutral-800"
+          className="flex flex-wrap gap-4 sm:gap-6 mb-8 sm:mb-10 pb-6 sm:pb-8 border-b border-neutral-800"
         >
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-full bg-neutral-800 flex items-center justify-center text-lg">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-neutral-800 flex items-center justify-center text-base sm:text-lg">
               👤
             </div>
             <div>
               <p className="text-xs text-neutral-500 uppercase tracking-wide">Instructor</p>
-              <p className="font-semibold">{courseData.instructor}</p>
+              <p className="font-semibold text-sm sm:text-base">{courseData.instructor}</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-full bg-neutral-800 flex items-center justify-center text-lg">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-neutral-800 flex items-center justify-center text-base sm:text-lg">
               ⏱️
             </div>
             <div>
               <p className="text-xs text-neutral-500 uppercase tracking-wide">Duration</p>
-              <p className="font-semibold">{courseData.duration}</p>
+              <p className="font-semibold text-sm sm:text-base">{courseData.duration}</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-full bg-neutral-800 flex items-center justify-center text-lg">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-neutral-800 flex items-center justify-center text-base sm:text-lg">
               💵
             </div>
             <div>
               <p className="text-xs text-neutral-500 uppercase tracking-wide">Price</p>
-              <p className="font-semibold">${courseData.price}</p>
+              <p className="font-semibold text-sm sm:text-base">${courseData.price}</p>
             </div>
           </div>
         </motion.div>
@@ -120,8 +120,8 @@ export default function CourseDetailPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <h2 className="text-2xl font-bold mb-4">About This Course</h2>
-          <p className="text-neutral-400 text-lg leading-relaxed">
+          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About This Course</h2>
+          <p className="text-neutral-400 text-sm sm:text-lg leading-relaxed">
             {courseData.description}
           </p>
         </motion.div>
@@ -130,9 +130,9 @@ export default function CourseDetailPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="mt-12"
+          className="mt-8 sm:mt-12"
         >
-          <button className="w-full md:w-auto px-10 py-4 rounded-full bg-white text-black font-bold text-lg hover:scale-105 active:scale-95 transition-transform shadow-xl cursor-pointer">
+          <button className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-white text-black font-bold text-base sm:text-lg hover:scale-105 active:scale-95 transition-transform shadow-xl cursor-pointer">
             Enroll Now — ${courseData.price}
           </button>
         </motion.div>

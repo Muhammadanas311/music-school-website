@@ -42,24 +42,24 @@ export const webinars = [
 ];
 export default function UpcomingWebinars() {
   return (
-    <div className="py-12 bg-gray-950">
-      <div className="text-center">
-        <h2 className="text-base text-gray-500 font-semibold tracking-wide uppercase">
+    <div className="py-10 sm:py-12 bg-gray-950">
+      <div className="text-center px-4">
+        <h2 className="text-sm sm:text-base text-gray-500 font-semibold tracking-wide uppercase">
           FEATURED WEBINARS
         </h2>
-        <p className="mt-4 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+        <p className="mt-2 sm:mt-4 text-2xl sm:text-3xl md:text-4xl leading-8 font-extrabold tracking-tight text-white">
           Enhance Your Musical Journey
         </p>
       </div>
       <div>
-        <div className="max-w-5xl mx-auto px-8">
-      <HoverEffect items={webinars} />
-    </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
+          <HoverEffect items={webinars} />
+        </div>
       </div>
-      <div className="mt-5 text-center">
+      <div className="mt-4 sm:mt-5 text-center px-4">
         <Link
           href={"/webinars"}
-          className="rounded-2xl px-6 py-4 border border-neutral-700 text-white-700 bg-gray-700 hover:bg-gray-900 transition duration-200"
+          className="inline-block rounded-2xl px-6 py-3.5 sm:py-4 border border-neutral-700 text-white bg-gray-700 hover:bg-gray-900 transition duration-200"
         >
           View All Webinars
         </Link>

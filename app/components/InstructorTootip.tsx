@@ -48,14 +48,18 @@ const Instructors = [
 ];
 export default function InstructorTootip() {
   return (
-    <div className="relative h-[40rem] overflow-hidden flex items-center justify-center">
-    <WavyBackground className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center h-full">
-        <h2 className="text-center text-2xl md:text-4xl lg:text-7xl text-white font-bold mb-8">Meet Our Instructor</h2>
-        <p className="text-base md:text-lg text-white text-center mb-4">Discover the talented professional who will guide your musical journey</p>
-    <div className="flex flex-row items-center justify-center mb-10 w-full">
-      <AnimatedTooltip items={Instructors} />
+    <div className="relative h-[32rem] sm:h-[36rem] md:h-[40rem] overflow-hidden flex items-center justify-center px-4">
+      <WavyBackground className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center h-full px-2">
+        <h2 className="text-center text-2xl sm:text-4xl md:text-5xl lg:text-7xl text-white font-bold mb-4 sm:mb-8 px-2">
+          Meet Our Instructor
+        </h2>
+        <p className="text-sm sm:text-base md:text-lg text-white text-center mb-6 sm:mb-8 px-4 max-w-xl mx-auto leading-relaxed">
+          Discover the talented professional who will guide your musical journey
+        </p>
+        <div className="flex flex-row items-center justify-center mb-6 sm:mb-10 w-full px-4">
+          <AnimatedTooltip items={Instructors} />
+        </div>
+      </WavyBackground>
     </div>
-     </WavyBackground>
-    </div>
-  )
+  );
 }
